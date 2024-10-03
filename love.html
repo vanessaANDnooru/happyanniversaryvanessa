@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons I Love You</title>
+    <link rel="stylesheet" href="love_styles.css">
+    <script>
+        function enlargeImage(img) {
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+            const enlargedImg = document.createElement('img');
+            enlargedImg.src = img.src;
+            enlargedImg.className = 'enlarged';
+            overlay.appendChild(enlargedImg);
+            document.body.appendChild(overlay);
+
+            overlay.onclick = function() {
+                document.body.removeChild(overlay);
+            };
+        }
+    </script>
+ <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="love.html">Why I Love You</a></li>
+            <li><a href="insecure.html">If You Ever Feel Insecure</a></li>
+        </ul>
+    </nav>
+</head>
+<body class="fade-in">
+    <!-- Navigation Bar -->
+   
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="ellie3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <h1 class="glow">Reasons I Love You</h1>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="10.jpeg" alt="Reason 1" onclick="enlargeImage(this)">
+            <p class="caption glow">Your beautful hair!</p>
+        </div>
+        <div class="image-item">
+            <img src="11.jpeg" alt="Reason 2" onclick="enlargeImage(this)">
+            <p class="caption glow">Your kindness and love for animals</p>
+        </div>
+        <div class="image-item">
+            <img src="12.jpeg" alt="Reason 3" onclick="enlargeImage(this)">
+            <p class="caption glow">You inspire me to be better!</p>
+        </div>
+        <div class="image-item">
+            <img src="13.jpeg" alt="Reason 4" onclick="enlargeImage(this)">
+            <p class="caption glow">Your amazing fashion sense</p>
+        </div>
+        <div class="image-item">
+            <img src="14.jpeg" alt="Reason 5" onclick="enlargeImage(this)">
+            <p class="caption glow">Your sexy side</p>
+        </div>
+        <div class="image-item">
+            <img src="15.jpeg" alt="Reason 6" onclick="enlargeImage(this)">
+            <p class="caption glow">& last but not least...Your amazing smile.</p>
+        </div>
+    </div>
+
+    <!-- Overlay for Enlarged Image -->
+    <div class="overlay" style="display: none;"></div>
+</body>
+</html>

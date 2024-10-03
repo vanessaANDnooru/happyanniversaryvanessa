@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Reveal</title>
+    <link rel="stylesheet" href="reveal_styles.css">
+</head>
+<body class="fade-in">
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="ellie2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="love.html">Why I Love You</a></li>
+            <li><a href="insecure.html">If You Ever Feel Insecure</a></li>
+        </ul>
+    </nav>
+
+    <div class="image-reveal-container">
+        <img id="revealedImage" src="" alt="Revealed Image">
+    </div>
+
+    <footer>
+        <p class="subtext glow">Click the image to reveal more!</p>
+    </footer>
+
+    <script>
+        const images = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg"];
+        let currentIndex = 0;
+
+        const revealedImage = document.getElementById('revealedImage');
+
+        function showNextImage() {
+            revealedImage.src = images[currentIndex];
+            revealedImage.style.display = "block"; // Show the image
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+        }
+
+        revealedImage.addEventListener('click', showNextImage);
+        showNextImage(); // Show the first image immediately
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Keep text color white for contrast */
+    text-align: center;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded edges */
+    padding: 20px; /* Padding for aesthetics */
+    position: relative; /* To position child elements correctly */
+}
+
+.video-background {
+    position: fixed; /* Fixes the video background */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Send video behind other elements */
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the video */
+}
+
+h1 {
+    font-size: 3.5em; /* Larger font size for the heading */
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Start slightly above */
+    animation: fadeInSlide 0.8s forwards 0.5s; /* Fade and slide in with delay */
+}
+
+.glow {
+    text-shadow: 0 0 20px #00ff7f, 0 0 30px #00ff7f; /* Green glow for headings */
+    transition: transform 0.3s;
+}
+
+.glow:hover {
+    transform: scale(1.1);
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Space from the main content */
+}
+
+.image-item {
+    margin: 0 15px;
+    position: relative; /* Position for the glow effect */
+}
+
+.image-item img {
+    width: 250px; /* Increased image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 0 10px #00ff7f; /* Green glow outline */
+    opacity: 0.1; /* 10% transparency */
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s; /* Animation on hover */
+}
+
+.image-item img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 0 20px #00ff7f; /* Enhanced green glow on hover */
+    opacity: 1; /* Fully visible on hover */
+}
+
+/* Fade and slide-in animation */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0; /* Start invisible */
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+.subtext {
+    font-size: 1.5em; /* Size for the subtext */
+    margin: 10px 0;
+    text-align: center; /* Centered text */
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInSlide 0.8s forwards 1s; /* Fade and slide in with delay */
+}
+
+footer {
+    margin-top: 40px; /* Space from the main content */
+    position: relative; /* Ensure footer is relative to main content */
+}
+
+footer .glow {
+    color: #00ff7f; /* Green color for subtext */
+    text-shadow: 0 0 20px #00ff7f, 0 0 30px #00ff7f; /* Glowing effect */
+}

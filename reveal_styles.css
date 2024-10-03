@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind other content */
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Image Reveal Container */
+.image-reveal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 200px); /* Adjust height for centering */
+    padding: 20px; /* Optional padding */
+}
+
+#revealedImage {
+    max-width: 90%; /* Ensure the image takes up to 90% of the container width */
+    max-height: 80%; /* Ensure the image takes up to 80% of the container height */
+    border: 5px solid #00ff7f; /* Green border */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 0 20px #00ff7f; /* Glowing effect */
+    display: none; /* Initially hidden */
+    transition: transform 0.3s ease; /* Transition effect */
+}
+
+#revealedImage:hover {
+    transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgba(139, 69, 19, 0.8); /* Brown with some transparency */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 2; /* Above the video */
+    border-radius: 10px; /* Rounded edges for a cleaner look */
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start; /* Align links to the left */
+}
+
+.navbar li {
+    margin: 0 15px; /* Space between links */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff; /* White text color for contrast */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #00ff7f; /* Change color on hover */
+}
+
+/* Subtext */
+.subtext {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #00ff7f; /* Glowing effect */
+}
